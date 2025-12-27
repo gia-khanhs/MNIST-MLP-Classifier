@@ -67,11 +67,11 @@ def readLabels(filePath):
 
 class mnist:
     class train:
-        img = readImages(trainImgPath)
-        label = readLabels(trainLabelPath)
+        img = readImages(trainImgPath) / 255 #normalise
+        label = readLabels(trainLabelPath) 
         size = len(label)
 
     class test:
-        img = readImages(testImgPath)
+        img = readImages(testImgPath) / 255 #normalise
         label = readLabels(testLabelPath)
         size = len(label)
